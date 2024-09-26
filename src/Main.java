@@ -8,6 +8,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
 
+
         double num1;
         double num2;
         int operacion;
@@ -35,29 +36,26 @@ public class Main {
         System.out.print("\nSeleccione la operacion deseada: \n");
 
 
-
+        OperacionesCalculadora calculadora = new OperacionesCalculadora(num1, num2);
         do {
             operacion = scanner.nextInt();
 
-            OperacionesCalculadora calculadora = new OperacionesCalculadora(num1, num2, operacion);
+
 
             switch (operacion) {
                 case 1:
-                    resultado = calculadora.sumar(num1, num2);
-                    System.out.println("El resultado de la suma es: " + resultado);
+                    System.out.println("El resultado de la suma es: " + calculadora.sumar());
 
                     break;
                 case 2:
-                    resultado = calculadora.restar(num1, num2);
-                    System.out.println("El resultado de la resta es: " + resultado);
+                    System.out.println("El resultado de la resta es: " + calculadora.restar());
                     break;
 
                 case 3:
-                    resultado = calculadora.multiplicar(num1, num2);
-                    System.out.println("El resultado de la multiplicación es: " + resultado);
+                    System.out.println("El resultado de la multiplicación es: " + calculadora.multiplicar());
                     break;
                 case 4:
-                    resultado = calculadora.dividir(num1, num2);
+                    resultado = calculadora.dividir();
                     if (!Double.isNaN(resultado)) {
                         System.out.println("El resultado de la división es: " + resultado);
                     }

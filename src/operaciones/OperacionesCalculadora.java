@@ -4,24 +4,22 @@ public class OperacionesCalculadora {
 
     private double num1;
     private double num2;
-    private int operacion;
 
-    public OperacionesCalculadora(double num1, double num2, int operacion) {
+    public OperacionesCalculadora(double num1, double num2) {
         this.num1 = num1;
         this.num2 = num2;
-        this.operacion = operacion;
     }
 
-    public double sumar(double a, double b){
-     return a+b;
+    public double sumar(){
+     return num1+num2;
     }
-    public double restar(double a, double b){
-        return a-b;
+    public double restar(){
+        return num1-num2;
     }
-    public double multiplicar(double a, double b){
-        return a*b;
+    public double multiplicar(){
+        return num1*num2;
     }
-    public double dividir(double a, double b){
+    public double dividir(){
         if (num2 != 0) {
             return num1 / num2;
         } else {
