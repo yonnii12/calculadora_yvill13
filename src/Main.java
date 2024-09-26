@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
 
-        OperacionesCalculadora calculadora = new OperacionesCalculadora();
+
         Scanner scanner = new Scanner(System.in);
 
         double num1;
@@ -33,8 +33,13 @@ public class Main {
         System.out.println("  *       4.  Realizar Division                       *");
         System.out.println("  *****************************************************");
         System.out.print("\nSeleccione la operacion deseada: \n");
+
+
+
         do {
             operacion = scanner.nextInt();
+
+            OperacionesCalculadora calculadora = new OperacionesCalculadora(num1, num2, operacion);
 
             switch (operacion) {
                 case 1:
@@ -52,11 +57,9 @@ public class Main {
                     System.out.println("El resultado de la multiplicación es: " + resultado);
                     break;
                 case 4:
-                    if (num2 != 0) {
-                        resultado = calculadora.dividir(num1, num2);
+                    resultado = calculadora.dividir(num1, num2);
+                    if (!Double.isNaN(resultado)) {
                         System.out.println("El resultado de la división es: " + resultado);
-                    } else {
-                        System.out.println("Error: No se puede dividir entre cero.");
                     }
                     break;
                 default:
